@@ -1,0 +1,165 @@
+hexapodo:
+  # Publish all joint states -----------------------------------
+  joint_state_controller:
+    type: joint_state_controller/JointStateController
+    publish_rate: 100
+
+  # Effort Controllers ---------------------------------------
+  # Leg 1 ----------------------------------------------------
+  jp11_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: jp11
+    pid: {p: 100.0, i: 0.01, d: 0.001}
+  jp12_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: jp12
+    pid: {p: 100.0, i: 0.01, d: 0.001}
+  jp13_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: jp13
+    pid: {p: 100.0, i: 0.01, d: 0.001}
+
+  # Leg 2 ----------------------------------------------------
+  jp21_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: jp21
+    pid: {p: 100.0, i: 0.01, d: 0.001}
+  jp22_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: jp22
+    pid: {p: 100.0, i: 0.01, d: 0.001}
+  jp23_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: jp23
+    pid: {p: 100.0, i: 0.01, d: 0.001}
+
+  # Leg 3 ----------------------------------------------------
+  jp31_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: jp31
+    pid: {p: 100.0, i: 0.01, d: 0.001}
+  jp32_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: jp32
+    pid: {p: 100.0, i: 0.01, d: 0.001}
+  jp33_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: jp33
+    pid: {p: 100.0, i: 0.01, d: 0.001}
+
+  # Leg 4 ----------------------------------------------------
+  jp41_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: jp41
+    pid: {p: 100.0, i: 0.01, d: 0.001}
+  jp42_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: jp42
+    pid: {p: 100.0, i: 0.01, d: 0.001}
+  jp43_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: jp43
+    pid: {p: 100.0, i: 0.01, d: 0.001}
+
+  # Leg 5 ----------------------------------------------------
+  jp51_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: jp51
+    pid: {p: 100.0, i: 0.01, d: 0.001}
+  jp52_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: jp52
+    pid: {p: 100.0, i: 0.01, d: 0.001}
+  jp53_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: jp53
+    pid: {p: 100.0, i: 0.01, d: 0.001}
+
+  # Leg 6 ----------------------------------------------------
+  jp61_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: jp61
+    pid: {p: 100.0, i: 0.01, d: 0.001}
+  jp62_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: jp62
+    pid: {p: 100.0, i: 0.01, d: 0.001}
+  jp63_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: jp63
+    pid: {p: 100.0, i: 0.01, d: 0.001}
+
+gazebo_ros_control:
+  pid_gains:
+    jp11:
+      p: 100.0
+      i: 0.1
+      d: 0.001
+    jp12:
+      p: 100.0
+      i: 0.1
+      d: 0.001
+    jp13:
+      p: 100.0
+      i: 0.1
+      d: 0.001
+    jp21:
+      p: 100.0
+      i: 0.1
+      d: 0.001
+    jp22:
+      p: 100.0
+      i: 0.1
+      d: 0.001
+    jp23:
+      p: 100.0
+      i: 0.1
+      d: 0.001
+    jp31:
+      p: 100.0
+      i: 0.1
+      d: 0.001
+    jp32:
+      p: 100.0
+      i: 0.1
+      d: 0.001
+    jp33:
+      p: 100.0
+      i: 0.1
+      d: 0.001
+    jp41:
+      p: 100.0
+      i: 0.1
+      d: 0.001
+    jp42:
+      p: 100.0
+      i: 0.1
+      d: 0.001
+    jp43:
+      p: 100.0
+      i: 0.1
+      d: 0.001
+    jp51:
+      p: 100.0
+      i: 0.1
+      d: 0.001
+    jp52:
+      p: 100.0
+      i: 0.1
+      d: 0.001
+    jp53:
+      p: 100.0
+      i: 0.1
+      d: 0.001
+    jp61:
+      p: 100.0
+      i: 0.1
+      d: 0.001
+    jp62:
+      p: 100.0
+      i: 0.1
+      d: 0.001
+    jp63:
+      p: 100.0
+      i: 0.1
+      d: 0.001

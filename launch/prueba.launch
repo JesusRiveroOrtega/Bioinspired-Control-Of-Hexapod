@@ -1,0 +1,39 @@
+<launch>
+  <!-- Launch Gazebo  -->
+  <include file="$(find hexapodo)/launch/gazebo.launch" />
+  <!--node name="cpgInhC" pkg="hexapodo" type="cpgInhC_2.py"/-->
+
+  <!-- Load joint controller configurations from YAML file to parameter server -->
+  <rosparam file="$(find hexapodo)/config/hexapod_control_config.yaml" command="load"/>
+
+
+  <!-- load the controllers -->
+  <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false"
+	output="screen" ns="/hexapodo" args="joint_state_controller
+					  jp11_position_controller
+					  jp12_position_controller
+					  jp13_position_controller
+					  jp21_position_controller
+					  jp22_position_controller
+					  jp23_position_controller
+					  jp31_position_controller
+					  jp32_position_controller
+					  jp33_position_controller
+					  jp41_position_controller
+					  jp42_position_controller
+					  jp43_position_controller
+					  jp51_position_controller
+					  jp52_position_controller
+					  jp53_position_controller
+					  jp61_position_controller
+					  jp62_position_controller
+					  jp63_position_controller"/>
+
+
+  <!-- convert joint states to TF transforms for rviz, etc -->
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"
+	respawn="false" output="screen">
+    <remap from="/joint_states" to="/hexapodo/joint_states" />
+  </node>
+
+</launch>

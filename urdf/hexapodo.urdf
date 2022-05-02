@@ -1,0 +1,1491 @@
+<robot
+  name="hexapodo">
+  <link name="base"></link>
+
+<!-- Used for fixing robot to Gazebo 'base_link' -->
+
+  <link
+    name="cuerpo">
+    <inertial>
+      <origin
+        xyz="-7.67385716855125E-20 5.75369049560506E-18 1.79439048148822E-05"
+        rpy="0 0 0" />
+      <mass
+        value="4.93721482282079" />
+      <inertia
+        ixx="0.0277462428479091"
+        ixy="-9.84459984152797E-21"
+        ixz="5.45487412875828E-20"
+        iyy="0.150160983710509"
+        iyz="2.0141114662625E-19"
+        izz="0.173869855391084" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexapodo/meshes/cuerpo.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexapodo/meshes/cuerpo.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_cuerpo"
+    type="fixed">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="base" />
+    <child
+      link="cuerpo" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="p11">
+    <inertial>
+      <origin
+        xyz="-0.0330336703396177 5.55111512312578E-17 0.00274015580476664"
+        rpy="0 0 0" />
+      <mass
+        value="0.198502212856218" />
+      <inertia
+        ixx="8.18352974961997E-05"
+        ixy="1.28273886217102E-20"
+        ixz="-1.25679049034686E-05"
+        iyy="0.000190044706552223"
+        iyz="-5.80085241721119E-22"
+        izz="0.00022777215819075" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexapodo/meshes/p11.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexapodo/meshes/p11.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="jp11"
+    type="revolute">
+    <origin
+      xyz="0.25 0.105 0.07"
+      rpy="-1.98172761198337E-30 1.71269180860749E-30 -1.5707963267949" />
+    <parent
+      link="cuerpo" />
+    <child
+      link="p11" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-0.8"
+      upper="0.8"
+      effort="1000.0"
+      velocity="1" />
+  </joint>
+  <link
+    name="p12">
+    <inertial>
+      <origin
+        xyz="0.0394965882788175 -0.00328155545066031 1.28410003097379E-06"
+        rpy="0 0 0" />
+      <mass
+        value="0.0455163870252693" />
+      <inertia
+        ixx="5.14288714847103E-05"
+        ixy="4.90946613482593E-07"
+        ixz="-2.64119018615681E-10"
+        iyy="8.70165532753024E-05"
+        iyz="-7.53264818147405E-10"
+        izz="3.8737181061445E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexapodo/meshes/p12.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexapodo/meshes/p12.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="jp12"
+    type="revolute">
+    <origin
+      xyz="-0.06 0 0"
+      rpy="1.5707963267949 -0.267685420661524 -3.14159265358979" />
+    <parent
+      link="p11" />
+    <child
+      link="p12" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1"
+      upper="0.8"
+      effort="1000.0"
+      velocity="1" />
+  </joint>
+  <link
+    name="p13">
+    <inertial>
+      <origin
+        xyz="5.55111512312578E-17 -0.089857526380043 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.0898938055098079" />
+      <inertia
+        ixx="0.000330840453176227"
+        ixy="3.48551322701125E-20"
+        ixz="8.736092362527E-21"
+        iyy="4.58717091770854E-05"
+        iyz="3.5178674085792E-20"
+        izz="0.000288398666568014" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexapodo/meshes/p13.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexapodo/meshes/p13.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="jp13"
+    type="revolute">
+    <origin
+      xyz="0.08 0 0"
+      rpy="-2.80170768058436E-30 -1.22464679914733E-16 -0.267685420661524" />
+    <parent
+      link="p12" />
+    <child
+      link="p13" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-0.7"
+      upper="1"
+      effort="1000.0"
+      velocity="1" />
+  </joint>
+  <link
+    name="p21">
+    <inertial>
+      <origin
+        xyz="-0.0330336703396177 4.91298831101362E-18 0.00274015580476666"
+        rpy="0 0 0" />
+      <mass
+        value="0.198502212856218" />
+      <inertia
+        ixx="8.18352974961998E-05"
+        ixy="3.99320086900418E-21"
+        ixz="-1.25679049034686E-05"
+        iyy="0.000190044706552223"
+        iyz="6.58966846156052E-22"
+        izz="0.00022777215819075" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexapodo/meshes/p21.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexapodo/meshes/p21.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="jp21"
+    type="revolute">
+    <origin
+      xyz="0 0.104999999999999 0.07"
+      rpy="7.25929526507006E-27 3.47757674936792E-15 -1.5707963267949" />
+    <parent
+      link="cuerpo" />
+    <child
+      link="p21" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-0.8"
+      upper="0.8"
+      effort="1000.0"
+      velocity="1" />
+  </joint>
+  <link
+    name="p22">
+    <inertial>
+      <origin
+        xyz="0.0394965882788174 -0.00328155545066029 1.28410003101641E-06"
+        rpy="0 0 0" />
+      <mass
+        value="0.0455163870252691" />
+      <inertia
+        ixx="5.142887148471E-05"
+        ixy="4.90946613482588E-07"
+        ixz="-2.64119018631892E-10"
+        iyy="8.7016553275302E-05"
+        iyz="-7.53264818107439E-10"
+        izz="3.87371810614449E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexapodo/meshes/p22.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexapodo/meshes/p22.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="jp22"
+    type="revolute">
+    <origin
+      xyz="-0.0600000000000004 0 0"
+      rpy="1.5707963267949 -0.26768542066151 3.14159265358979" />
+    <parent
+      link="p21" />
+    <child
+      link="p22" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1"
+      upper="0.8"
+      effort="1000.0"
+      velocity="1" />
+  </joint>
+  <link
+    name="p23">
+    <inertial>
+      <origin
+        xyz="2.77555756156289E-17 -0.0898575263800431 -8.83865591234348E-18"
+        rpy="0 0 0" />
+      <mass
+        value="0.0898938055098077" />
+      <inertia
+        ixx="0.000330840453176226"
+        ixy="4.64077671504062E-20"
+        ixz="6.89643082757336E-21"
+        iyy="4.58717091770853E-05"
+        iyz="3.58533852936526E-20"
+        izz="0.000288398666568014" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexapodo/meshes/p23.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexapodo/meshes/p23.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="jp23"
+    type="revolute">
+    <origin
+      xyz="0.0799999999999997 0 0"
+      rpy="1.21204626683098E-16 1.75224512334659E-17 -0.267685420661514" />
+    <parent
+      link="p22" />
+    <child
+      link="p23" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-0.7"
+      upper="1"
+      effort="1000.0"
+      velocity="1" />
+  </joint>
+  <link
+    name="p31">
+    <inertial>
+      <origin
+        xyz="-0.0330336703396177 0 0.00274015580476664"
+        rpy="0 0 0" />
+      <mass
+        value="0.198502212856218" />
+      <inertia
+        ixx="8.18352974961998E-05"
+        ixy="3.04719753475408E-21"
+        ixz="-1.25679049034686E-05"
+        iyy="0.000190044706552223"
+        iyz="-1.37290104749607E-21"
+        izz="0.00022777215819075" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexapodo/meshes/p31.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexapodo/meshes/p31.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="jp31"
+    type="revolute">
+    <origin
+      xyz="-0.25 0.105 0.07"
+      rpy="5.98199224752168E-31 2.9505126320908E-30 -1.5707963267949" />
+    <parent
+      link="cuerpo" />
+    <child
+      link="p31" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-0.8"
+      upper="0.8"
+      effort="1000.0"
+      velocity="1" />
+  </joint>
+  <link
+    name="p32">
+    <inertial>
+      <origin
+        xyz="0.0394965882788174 -0.00328155545066024 1.2841000307795E-06"
+        rpy="0 0 0" />
+      <mass
+        value="0.0455163870252693" />
+      <inertia
+        ixx="5.14288714847102E-05"
+        ixy="4.90946613482576E-07"
+        ixz="-2.64119018512921E-10"
+        iyy="8.70165532753023E-05"
+        iyz="-7.53264818103291E-10"
+        izz="3.8737181061445E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexapodo/meshes/p32.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexapodo/meshes/p32.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="jp32"
+    type="revolute">
+    <origin
+      xyz="-0.06 0 0"
+      rpy="1.5707963267949 -0.267685420661524 -3.14159265358979" />
+    <parent
+      link="p31" />
+    <child
+      link="p32" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1"
+      upper="0.8"
+      effort="1000.0"
+      velocity="1" />
+  </joint>
+  <link
+    name="p33">
+    <inertial>
+      <origin
+        xyz="8.32667268468867E-17 -0.0898575263800431 -5.55111512312578E-17"
+        rpy="0 0 0" />
+      <mass
+        value="0.089893805509808" />
+      <inertia
+        ixx="0.000330840453176228"
+        ixy="4.48659865078814E-20"
+        ixz="2.61887781421628E-21"
+        iyy="4.58717091770855E-05"
+        iyz="4.12096675383835E-20"
+        izz="0.000288398666568015" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexapodo/meshes/p33.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexapodo/meshes/p33.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="jp33"
+    type="revolute">
+    <origin
+      xyz="0.08 0 0"
+      rpy="-2.73571605578844E-30 -1.22464679914732E-16 -0.267685420661524" />
+    <parent
+      link="p32" />
+    <child
+      link="p33" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-0.7"
+      upper="1"
+      effort="1000.0"
+      velocity="1" />
+  </joint>
+  <link
+    name="p41">
+    <inertial>
+      <origin
+        xyz="-0.0330336703396177 0 0.00274015580476664"
+        rpy="0 0 0" />
+      <mass
+        value="0.198502212856218" />
+      <inertia
+        ixx="8.18352974961997E-05"
+        ixy="1.19285250660876E-20"
+        ixz="-1.25679049034686E-05"
+        iyy="0.000190044706552223"
+        iyz="-1.34858370709267E-21"
+        izz="0.00022777215819075" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexapodo/meshes/p41.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexapodo/meshes/p41.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="jp41"
+    type="revolute">
+    <origin
+      xyz="0.25 -0.105 0.07"
+      rpy="-2.36579478451944E-30 -1.28101230417719E-30 1.5707963267949" />
+    <parent
+      link="cuerpo" />
+    <child
+      link="p41" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-0.8"
+      upper="0.8"
+      effort="1000.0"
+      velocity="1" />
+  </joint>
+  <link
+    name="p42">
+    <inertial>
+      <origin
+        xyz="0.0394965882788174 -0.00328155545066026 1.28410003080726E-06"
+        rpy="0 0 0" />
+      <mass
+        value="0.0455163870252694" />
+      <inertia
+        ixx="5.14288714847104E-05"
+        ixy="4.90946613482577E-07"
+        ixz="-2.64119018462211E-10"
+        iyy="8.70165532753025E-05"
+        iyz="-7.53264818170546E-10"
+        izz="3.87371810614451E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexapodo/meshes/p42.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexapodo/meshes/p42.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="jp42"
+    type="revolute">
+    <origin
+      xyz="-0.06 0 0"
+      rpy="1.5707963267949 -0.267685420661526 3.14159265358979" />
+    <parent
+      link="p41" />
+    <child
+      link="p42" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1"
+      upper="0.8"
+      effort="1000.0"
+      velocity="1" />
+  </joint>
+  <link
+    name="p43">
+    <inertial>
+      <origin
+        xyz="0 -0.089857526380043 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.089893805509808" />
+      <inertia
+        ixx="0.000330840453176227"
+        ixy="6.13308061189231E-20"
+        ixz="1.2660848197843E-20"
+        iyy="4.58717091770854E-05"
+        iyz="3.27770880642522E-20"
+        izz="0.000288398666568015" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexapodo/meshes/p43.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexapodo/meshes/p43.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="jp43"
+    type="revolute">
+    <origin
+      xyz="0.08 0 0"
+      rpy="-4.91485614409886E-18 5.62917932036535E-18 -0.267685420661526" />
+    <parent
+      link="p42" />
+    <child
+      link="p43" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-0.7"
+      upper="1"
+      effort="1000.0"
+      velocity="1" />
+  </joint>
+  <link
+    name="p51">
+    <inertial>
+      <origin
+        xyz="-0.0330336703396177 7.31417304255314E-19 0.00274015580476661"
+        rpy="0 0 0" />
+      <mass
+        value="0.198502212856218" />
+      <inertia
+        ixx="8.18352974961997E-05"
+        ixy="1.35536117787086E-20"
+        ixz="-1.25679049034686E-05"
+        iyy="0.000190044706552222"
+        iyz="-6.99995341154411E-21"
+        izz="0.000227772158190749" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexapodo/meshes/p51.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexapodo/meshes/p51.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="jp51"
+    type="revolute">
+    <origin
+      xyz="0 -0.105000000000001 0.07"
+      rpy="-4.14221000570238E-27 -3.47757674936792E-15 1.5707963267949" />
+    <parent
+      link="cuerpo" />
+    <child
+      link="p51" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-0.8"
+      upper="0.8"
+      effort="1000"
+      velocity="1" />
+  </joint>
+  <link
+    name="p52">
+    <inertial>
+      <origin
+        xyz="0.0394965882788176 -0.00328155545066028 1.284100030862E-06"
+        rpy="0 0 0" />
+      <mass
+        value="0.0455163870252695" />
+      <inertia
+        ixx="5.14288714847104E-05"
+        ixy="4.90946613482619E-07"
+        ixz="-2.64119018421739E-10"
+        iyy="8.70165532753026E-05"
+        iyz="-7.53264818095387E-10"
+        izz="3.87371810614452E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexapodo/meshes/p52.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexapodo/meshes/p52.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="jp52"
+    type="revolute">
+    <origin
+      xyz="-0.0599999999999994 0 0"
+      rpy="1.5707963267949 -0.267685420661529 -3.14159265358979" />
+    <parent
+      link="p51" />
+    <child
+      link="p52" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1"
+      upper="0.8"
+      effort="1000.0"
+      velocity="1" />
+  </joint>
+  <link
+    name="p53">
+    <inertial>
+      <origin
+        xyz="2.77555756156289E-17 -0.0898575263800431 -2.21210464425725E-17"
+        rpy="0 0 0" />
+      <mass
+        value="0.089893805509808" />
+      <inertia
+        ixx="0.000330840453176228"
+        ixy="4.37726529748666E-20"
+        ixz="9.35901772717335E-21"
+        iyy="4.58717091770855E-05"
+        iyz="4.81300736790708E-20"
+        izz="0.000288398666568015" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexapodo/meshes/p53.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexapodo/meshes/p53.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="jp53"
+    type="revolute">
+    <origin
+      xyz="0.08 0 0"
+      rpy="-1.27843895685102E-16 5.92771882201261E-17 -0.267685420661525" />
+    <parent
+      link="p52" />
+    <child
+      link="p53" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-0.7"
+      upper="1"
+      effort="1000.0"
+      velocity="1" />
+  </joint>
+  <link
+    name="p61">
+    <inertial>
+      <origin
+        xyz="-0.0330336703396177 5.55111512312578E-17 0.00274015580476666"
+        rpy="0 0 0" />
+      <mass
+        value="0.198502212856218" />
+      <inertia
+        ixx="8.18352974961997E-05"
+        ixy="9.72753049325201E-21"
+        ixz="-1.25679049034686E-05"
+        iyy="0.000190044706552223"
+        iyz="-5.80601136110508E-22"
+        izz="0.00022777215819075" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexapodo/meshes/p61.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexapodo/meshes/p61.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="jp61"
+    type="revolute">
+    <origin
+      xyz="-0.25 -0.105 0.07"
+      rpy="-1.36119296043107E-30 1.24807600455891E-28 1.5707963267949" />
+    <parent
+      link="cuerpo" />
+    <child
+      link="p61" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-0.8"
+      upper="0.8"
+      effort="1000.0"
+      velocity="1" />
+  </joint>
+  <link
+    name="p62">
+    <inertial>
+      <origin
+        xyz="0.0394965882788174 -0.00328155545066026 1.28410003097379E-06"
+        rpy="0 0 0" />
+      <mass
+        value="0.0455163870252693" />
+      <inertia
+        ixx="5.14288714847102E-05"
+        ixy="4.90946613482581E-07"
+        ixz="-2.64119018528414E-10"
+        iyy="8.70165532753023E-05"
+        iyz="-7.53264818151199E-10"
+        izz="3.8737181061445E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexapodo/meshes/p62.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexapodo/meshes/p62.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="jp62"
+    type="revolute">
+    <origin
+      xyz="-0.06 0 0"
+      rpy="1.5707963267949 -0.267685420661523 -3.14159265358979" />
+    <parent
+      link="p61" />
+    <child
+      link="p62" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1"
+      upper="0.8"
+      effort="1000.0"
+      velocity="1" />
+  </joint>
+  <link
+    name="p63">
+    <inertial>
+      <origin
+        xyz="-2.77555756156289E-17 -0.0898575263800431 2.77555756156289E-17"
+        rpy="0 0 0" />
+      <mass
+        value="0.0898938055098078" />
+      <inertia
+        ixx="0.000330840453176227"
+        ixy="4.92583639292392E-20"
+        ixz="5.43368876672547E-21"
+        iyy="4.58717091770854E-05"
+        iyz="1.10125885687616E-20"
+        izz="0.000288398666568014" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexapodo/meshes/p63.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexapodo/meshes/p63.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="jp63"
+    type="revolute">
+    <origin
+      xyz="0.08 0 0"
+      rpy="1.53211229796605E-17 3.82258744118073E-18 -0.267685420661523" />
+    <parent
+      link="p62" />
+    <child
+      link="p63" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-0.7"
+      upper="1"
+      effort="1000.0"
+      velocity="1" />
+  </joint>
+
+
+  <!-- Transmissions for ROS Control -->
+  <!-- LEG 1 ........................................................................................... -->
+  <transmission name="tran11">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="jp11">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor11">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="tran12">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="jp12">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor12">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="tran13">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="jp13">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor13">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <!-- LEG 2 ........................................................................................... -->
+  <transmission name="tran21">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="jp21">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor21">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="tran22">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="jp22">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor22">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="tran23">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="jp23">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor23">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <!-- LEG 3 ........................................................................................... -->
+  <transmission name="tran31">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="jp31">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor31">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="tran32">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="jp32">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor32">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="tran33">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="jp33">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor33">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <!-- LEG 4 ........................................................................................... -->
+  <transmission name="tran41">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="jp41">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor41">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="tran42">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="jp42">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor42">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="tran43">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="jp43">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor43">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <!-- LEG 5 ........................................................................................... -->
+  <transmission name="tran51">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="jp51">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor51">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="tran52">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="jp52">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor52">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="tran53">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="jp53">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor53">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <!-- LEG 6 ........................................................................................... -->
+  <transmission name="tran61">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="jp61">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor61">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="tran62">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="jp62">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor62">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="tran63">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="jp63">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor63">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <!-- ros_control plugin -->
+  <gazebo>
+    <plugin filename="libgazebo_ros_control.so" name="gazebo_ros_control">
+      <robotNamespace>/hexapodo</robotNamespace>
+      <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
+      <legacyModeNS>true</legacyModeNS>
+    </plugin>
+  </gazebo>
+
+
+ <link name="imu_link">
+    <inertial>
+        <mass value="0.001" />
+        <origin xyz="0 0 0" />
+        <inertia ixx="0.0001" ixy="0.0" ixz="0.0"
+                 iyy="0.000001" iyz="0.0"
+                 izz="0.0001" />
+    </inertial>
+        <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+            <box size = "0.01 0.01 0.01"/>
+                </geometry>
+        </visual>
+    <collision>
+        <geometry>
+            <box size = "0.01 0.01 0.01"/>
+        </geometry>
+    </collision>
+ </link>
+
+ <joint name="imu_joint" type="fixed">
+    <axis xyz="0 0 0"/>
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <parent link="base"/>
+    <child link="imu_link" />
+ </joint>
+
+  <gazebo reference="imu_link">
+    <gravity>true</gravity>
+    <sensor name="imu_sensor" type="imu">
+      <always_on>true</always_on>
+      <update_rate>500</update_rate>
+      <visualize>true</visualize>
+      <topic>__default_topic__</topic>
+      <plugin filename="libgazebo_ros_imu_sensor.so" name="imu_plugin">
+        <topicName>imu</topicName>
+        <bodyName>imu_link</bodyName>
+        <updateRateHZ>5.0</updateRateHZ>
+        <gaussianNoise>0.0</gaussianNoise>
+        <xyzOffset>0 0 0</xyzOffset>
+        <rpyOffset>0 0 0</rpyOffset>
+        <frameName>imu_link</frameName>
+      </plugin>
+      <pose>0 0 0 0 0 0</pose>
+    </sensor>
+  </gazebo>
+
+  <gazebo reference="cuerpo">
+    <material>Gazebo/Orange</material>
+  </gazebo>
+
+  <gazebo reference="p13">
+    <mu1>10</mu1>
+    <mu2>10</mu2>
+    <fdir1>1 0 0</fdir1>
+    <maxContacts>1</maxContacts>
+    <minDepth>0.005</minDepth>
+    <gravity>true</gravity>
+    <material>Gazebo/Black</material>
+  </gazebo>
+
+  <gazebo reference="p23">
+    <mu1>10</mu1>
+    <mu2>10</mu2>
+    <fdir1>1 0 0</fdir1>
+    <maxContacts>1</maxContacts>
+    <minDepth>0.005</minDepth>
+    <gravity>true</gravity>
+    <material>Gazebo/Black</material>
+  </gazebo>
+  <gazebo reference="p33">
+    <mu1>10</mu1>
+    <mu2>10</mu2>
+    <fdir1>1 0 0</fdir1>
+    <maxContacts>1</maxContacts>
+    <minDepth>0.005</minDepth>
+    <gravity>true</gravity>
+    <material>Gazebo/Black</material>
+  </gazebo>
+  <gazebo reference="p43">
+    <mu1>10</mu1>
+    <mu2>10</mu2>
+    <fdir1>1 0 0</fdir1>
+    <maxContacts>1</maxContacts>
+    <minDepth>0.005</minDepth>
+    <gravity>true</gravity>
+    <material>Gazebo/Black</material>
+  </gazebo>
+  <gazebo reference="p53">
+    <mu1>10</mu1>
+    <mu2>10</mu2>
+    <fdir1>1 0 0</fdir1>
+    <maxContacts>1</maxContacts>
+    <minDepth>0.005</minDepth>
+    <gravity>true</gravity>
+    <material>Gazebo/Black</material>
+  </gazebo>
+  <gazebo reference="p63">
+    <mu1>10</mu1>
+    <mu2>10</mu2>
+    <fdir1>1 0 0</fdir1>
+    <maxContacts>1</maxContacts>
+    <minDepth>0.005</minDepth>
+    <gravity>true</gravity>
+    <material>Gazebo/Black</material>
+  </gazebo>
+
+  <!-- Camera -->
+ <joint name="camera_joint" type="fixed">
+    <axis xyz="1 0 0" />
+    <origin xyz="-0.1 0 0.25" rpy="0 0 3.14159265359"/>
+    <parent link="base"/>
+    <child link="camera_link"/>
+  </joint>
+
+  <!-- Camera -->
+  <link name="camera_link">
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+    <box size="0.05 0.05 0.05"/>
+      </geometry>
+    </collision>
+
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+    <box size="0.05 0.05 0.05"/>
+      </geometry>
+      <material name="black"/>
+    </visual>
+
+    <inertial>
+      <mass value="1e-5" />
+      <origin xyz="0.1 0 0.06" rpy="0 0 0"/>
+      <inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6" />
+    </inertial>
+  </link>
+
+ <!-- camera -->
+  <gazebo reference="camera_link">
+    <sensor type="camera" name="camera1">
+      <update_rate>30.0</update_rate>
+      <camera name="head">
+        <horizontal_fov>1.3962634</horizontal_fov>
+        <image>
+          <width>800</width>
+          <height>800</height>
+          <format>R8G8B8</format>
+        </image>
+        <clip>
+          <near>0.02</near>
+          <far>300</far>
+        </clip>
+        <noise>
+          <type>gaussian</type>
+          <!-- Noise is sampled independently per pixel on each frame.
+               That pixel's noise value is added to each of its color
+               channels, which at that point lie in the range [0,1]. -->
+          <mean>0.0</mean>
+          <stddev>0.007</stddev>
+        </noise>
+      </camera>
+      <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
+        <alwaysOn>true</alwaysOn>
+        <updateRate>0.0</updateRate>
+        <cameraName>/hexapod_master/camera1</cameraName>
+        <imageTopicName>image_raw</imageTopicName>
+        <cameraInfoTopicName>camera_info</cameraInfoTopicName>
+        <frameName>camera_link</frameName>
+        <hackBaseline>0.07</hackBaseline>
+        <distortionK1>0.0</distortionK1>
+        <distortionK2>0.0</distortionK2>
+        <distortionK3>0.0</distortionK3>
+        <distortionT1>0.0</distortionT1>
+        <distortionT2>0.0</distortionT2>
+      </plugin>
+    </sensor>
+  </gazebo>
+
+
+</robot>

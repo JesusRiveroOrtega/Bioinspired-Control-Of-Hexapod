@@ -1,0 +1,22 @@
+-- DONE!! :D
+-- In the gazebo launch file add param line to set the robot description (not included in the new version of the exporter plugin)
+  <param name="robot_description" textfile="$(find hexapodo)/urdf/hexapodo.urdf" />
+
+-- Install the controllers:
+	sudo apt install ros-kinetic-joint-state-controller
+	sudo apt install ros-kinetic-position-controllers
+	sudo apt install ros-kinetic-effort-controllers
+
+-- set effort and velocity limits (this need to be review in the future to set according with the actuators)
+
+--> To do:  :(
+
+--> find the effect of <mechanicalReduction> tag in the transmission tag (sdf) [this is optional]
+
+--> review this tutorial: http://gazebosim.org/tutorials/?tut=ros_control in the section "Use rqt to send commands"
+--> or you can see this video to set the pid parameters like in the previus tutorial: https://www.youtube.com/watch?v=gA-O39LrXzI
+---------I CAN'T DO THIS^^^^ because the rqt_reconfigure don't show me the controller's nodes so.. gg :'v... I was reading about that and it looks like you need to define the node to be dynamic reconfigurable
+
+Finally in order to use position controller instead effort or velocity, you will see wanings msg on the terminal that warning you about the problem with the gravity with this controller's type on gazebo 7, in gazebo 9 it's fixed but in gazebo 7 must to choose if you want to use another controller type (effort or velocity for example) or set the pid parameters for gazebo just like in the issue link showed in the warning message (https://github.com/ros-simulation/gazebo_ros_pkgs/issues/612)
+
+And... If you'r asking why I wrote in english? The answer is very simple, because yes, ok no :v , that was just for practice my english (try don't tell me the errors that you find, I will review that later)

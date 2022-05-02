@@ -1,0 +1,24 @@
+<launch>
+  <include
+    file="$(find hexapodo)/launch/empty_world.launch">
+    <arg name="paused" default="True"/>
+  </include>
+  <!-- Robot pose -->
+  <arg name="x" default="0"/>
+  <arg name="y" default="0"/>
+  <arg name="z" default="0.08"/>
+  <arg name="roll" default="0"/>
+  <arg name="pitch" default="0"/>
+  <arg name="yaw" default="0"/>
+
+  <param name="robot_description" textfile="$(find hexapodo)/urdf/hexapodo.urdf" />
+  <node
+    name="spawn_model"
+    pkg="gazebo_ros"
+    type="spawn_model"
+    args="-file $(find hexapodo)/urdf/hexapodo.urdf -urdf -model hexapodo 
+          -x $(arg x) -y $(arg y) -z $(arg z)
+          -R $(arg roll) -P $(arg pitch) -Y $(arg yaw)"
+    output="screen" />
+
+</launch> 

@@ -1,0 +1,12 @@
+<launch>
+  
+  <node name="approach_node" pkg="hexapodo" type="attack.py"/>
+  <node name="explore_node" pkg="hexapodo" type="explore.py"/>
+  <node name="return_node" pkg="hexapodo" type="escape.py"/>
+  <node name="decision_making_node" pkg="hexapodo" type="DecisionMakingROS_V2.py"/>
+  <node name="rotational_control_node" pkg="hexapodo" type="rotational_control_network_ROS.py"/>
+  <node name="cpg_node" pkg="hexapodo" type="cpgInhC_2.py"/>
+  <node name="vector_summation_node" pkg="hexapodo" type="listener.py"/>
+
+
+</launch>
